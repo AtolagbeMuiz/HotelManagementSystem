@@ -20,11 +20,13 @@ namespace HotelManagement.Controllers
 
 
         //This Returns the Guest Details Form view
+        [HttpGet]
         public IActionResult RegisterGuestDetails()
         {
             return View();
         }
 
+        [HttpPost]
         public IActionResult RegisterGuestDetails(GuestDetails guestDetails)
         {
             //Validates the GuestDetails Model
