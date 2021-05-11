@@ -23,18 +23,31 @@ namespace HotelManagement.Controllers
         [HttpGet]
         public IActionResult RegisterGuestDetails()
         {
+            List<HotelRoom> listOfAvailableRooms = new List<HotelRoom>();
+            listOfAvailableRooms = this.objGuestDetails.getListOFAvailableRoom().ToList();
+            ViewBag.listOfRooms = listOfAvailableRooms;
+
             return View();
         }
 
         [HttpPost]
         public IActionResult RegisterGuestDetails(GuestDetails guestDetails)
         {
-            //Validates the GuestDetails Model
-            if(ModelState.IsValid)
+            try
             {
-                var details = this.objGuestDetails.registerGuest(guestDetails);
+                //Validates the GuestDetails Model
+                if (ModelState.IsValid)
+                {
+                    var details = this.objGuestDetails.registerGuest(guestDetails);
+                }
             }
-            return View();
+            catch (Exception ex)
+            {
+
+                var mess = ex.Message;
+            }
+            return RedirectToAction("RegisterGuestDetails");
         }
+
     }
 }

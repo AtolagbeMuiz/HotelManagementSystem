@@ -9,6 +9,7 @@ namespace HotelManagement.Models
     {
         private readonly HotelManagementDBContext _context;
 
+        //Costructor that Initializes private field (_context) with the instance of DBContext class
         public GuestDetailsRepo(HotelManagementDBContext context)
         {
             this._context = context;
@@ -18,6 +19,12 @@ namespace HotelManagement.Models
             _context.Guest.Add(guestDetails);
             _context.SaveChanges();
             return guestDetails;
+        }
+
+        public IEnumerable<HotelRoom> getListOFAvailableRoom()
+        {
+            var listOfAvailableRooms = _context.Room.ToList();
+            return listOfAvailableRooms;
         }
     }
 }

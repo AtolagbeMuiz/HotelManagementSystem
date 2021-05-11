@@ -8,5 +8,7 @@ namespace HotelManagement.Models
     public interface IGuestDetails
     {
         public GuestDetails registerGuest(GuestDetails guestDetails);
+
+        public IEnumerable<HotelRoom> getListOFAvailableRoom();
     }
 }

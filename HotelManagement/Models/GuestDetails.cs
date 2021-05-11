@@ -18,12 +18,14 @@ namespace HotelManagement.Models
         public string GuestAddress { get; set; }
 
         [Required]
-        public int AvailableRooms { get; set; }
+        public string AvailableRooms { get; set; }
 
         [Required]
         public DateTime CheckinDate { get; set; } = DateTime.Now;
 
         [Required]
         public DateTime CheckoutDate { get; set; }
+
+
     }
 }

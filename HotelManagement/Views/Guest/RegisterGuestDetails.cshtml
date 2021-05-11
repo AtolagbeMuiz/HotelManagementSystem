@@ -1,17 +1,16 @@
 ﻿@model GuestDetails;
-
 @{
     ViewData["Title"] = "Guest Form";
 }
 
 <head>
-    <script src="~/lib/jquery/dist/jquery-3.4.1.min (1).js"></script>
+    <script src="~/js/jquery-3.4.1.min.js"></script>
 </head>
 <h2>Register Guests</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="RegisterGuestDetails">
+        <form asp-controller="Guest" asp-action="RegisterGuestDetails">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="GuestName" class="control-label"></label>
@@ -23,11 +22,11 @@
                 <input asp-for="GuestAddress" class="form-control" />
                 <span asp-validation-for="GuestAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CheckinDate" class="control-label"></label>
                 <input asp-for="CheckinDate" class="form-control" />
                 <span asp-validation-for="CheckinDate" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="CheckoutDate" class="control-label"></label>
                 <input asp-for="CheckoutDate" class="form-control" />
@@ -35,18 +34,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="AvailableRooms" class="control-label"></label>
-                <input asp-for="AvailableRooms" class="form-control" />
+                <select asp-for="AvailableRooms" asp-items="@(new SelectList(@ViewBag.listOfRooms, "RoomName", "RoomName"))"></select>
                 <span asp-validation-for="AvailableRooms" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" id="btnSubmit" value="Create" class="btn btn-default" />
+                <input type="submit" id="btnSubmit" value="Register" class="btn btn-default bg-info" />
             </div>
         </form>
     </div>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
-    <br />
+   
 </div>
 <script type="text/javascript" language="javascript">
     $(document).ready(function () {
