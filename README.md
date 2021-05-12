@@ -8,4 +8,5 @@ This is a simple Hotel Management System that allows a guest to Check-in into a 
 - This project was imlpemented using the Repository Software Design Pattern.
 
 ## Check the Diagram below for the Entity-Relationship Diagram.
-![](Images/Hotel%20Management.png)
+This describes the relationship between the entities and the data model using cardialities.
+![](HotelManagement/Images/Hotel%20Management.png)
