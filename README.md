@@ -19,3 +19,6 @@ This describes the relationship between the entities and the data model using ca
 - The Project also has three entity models namely GuestDetails.cs, Reservation.cs and HotelRoom.cs with their individual properties.
 - The project has a controller named "GuestController.cs". This Controller has three action methods named "RegisterGuestDetails" which is an HttpGet request that returnd view RegisterGuestDetails to fill the Guest Form. The other action method has a similar name with the former but it's an HttpPost request that post form details to Database. The third action method name "ReturnForm" returns only a simple view.
 - The project aslo contains a "GuestDetailsRepo.cs" that inherits an "IGuest" Interface. This Repository is a Data-Access Layer that contain methods that Add Guest Details to the Database(DB) and method that returns List of available rooms from the DB.
+
+## Guest Details' Form
+![](HotelManagement/Images/GuestForm.PNG)
