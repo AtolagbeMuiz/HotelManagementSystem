@@ -4,14 +4,16 @@ using HotelManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelManagement.Migrations
 {
     [DbContext(typeof(HotelManagementDBContext))]
-    partial class HotelManagementDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210512191115_CreatedReservationSchema")]
+    partial class CreatedReservationSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,14 +75,11 @@ namespace HotelManagement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("GuestID")
+                    b.Property<int>("GuestID")
                         .HasColumnType("int");
 
                     b.Property<int>("RoomID")
                         .HasColumnType("int");
-
-                    b.Property<string>("RoomName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("RoomisAvailable")
                         .HasColumnType("bit");

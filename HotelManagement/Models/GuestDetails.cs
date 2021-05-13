@@ -17,7 +17,6 @@ namespace HotelManagement.Models
         [Required]
         public string GuestAddress { get; set; }
 
-        [Required]
         public string AvailableRooms { get; set; }
 
         [Required]
@@ -26,6 +25,6 @@ namespace HotelManagement.Models
         [Required]
         public DateTime CheckoutDate { get; set; }
 
-
+        public bool RoomisAvailable { get; set; } = true;
     }
 }

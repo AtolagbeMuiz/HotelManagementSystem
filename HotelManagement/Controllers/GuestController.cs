@@ -23,14 +23,16 @@ namespace HotelManagement.Controllers
         [HttpGet]
         public IActionResult RegisterGuestDetails()
         {
-            List<HotelRoom> listOfAvailableRooms = new List<HotelRoom>();
-            listOfAvailableRooms = this.objGuestDetails.getListOFAvailableRoom().ToList();
+            // List<Reservation> listOfAvailableRooms = new List<Reservation>();
+            var listOfAvailableRooms = this.objGuestDetails.getListOFAvailableRoom().ToList();
             ViewBag.listOfRooms = listOfAvailableRooms;
 
             return View();
         }
 
+
         [HttpPost]
+        //This binds the data to GuestDetails Model and passes the info into the Repo 
         public IActionResult RegisterGuestDetails(GuestDetails guestDetails)
         {
             try
@@ -43,10 +45,16 @@ namespace HotelManagement.Controllers
             }
             catch (Exception ex)
             {
-
+                //catches exception if there's any
                 var mess = ex.Message;
             }
-            return RedirectToAction("RegisterGuestDetails");
+            return RedirectToAction("ReturnForm");
+        }
+
+        //this action method returns the ReturnForm razor view after successful checkin
+        public IActionResult ReturnForm()
+        {
+            return View();
         }
 
     }

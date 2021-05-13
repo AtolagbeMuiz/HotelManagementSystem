@@ -9,6 +9,6 @@ namespace HotelManagement.Models
     {
         public GuestDetails registerGuest(GuestDetails guestDetails);
 
-        public IEnumerable<HotelRoom> getListOFAvailableRoom();
+        public IEnumerable<Reservation> getListOFAvailableRoom();
     }
 }
