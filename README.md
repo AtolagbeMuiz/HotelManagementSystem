@@ -7,7 +7,7 @@ This is a simple Hotel Management System that allows a guest to Check-in into a 
 - The Database provider used is the Microsoft SQL Server Database which is a Relational Database.
 - EF Core was used as the Object-Relational mapper.
 - LINQ was used to query the DB sets.
-- This project was imlpemented using the Repository Software Design Pattern.
+- This project was implemented using the Repository Software Design Pattern.
 - JQuery was also used  to prompt or alert the user that the guest has CheckedIn Successfully.
 
 ## Check the Diagram below for the Entity-Relationship Diagram.
